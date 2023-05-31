@@ -52,7 +52,7 @@ const cities = [
       id: 7,
       country: "AR",
       city: "Rosario",
-      image:"https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/V4MVEOVAH5CZBIUAPEKRILILZE.jpg",
+      image:"https://statics.eleconomista.com.ar/2022/08/62ebef6c39355.jpg",
       population: "1.193.605",
       color: "#DA0C19"
     },
@@ -68,7 +68,7 @@ const cities = [
       id: 9,
       country: "BRA",
       city: "São Paulo",
-      image:"https://www.visitbrasil.com/wp-content/uploads/2021/06/GettyImages-1166728645.jpg",
+      image:"https://statics.eleconomista.com.ar/2022/08/62ebef6c39355.jpg",
       population: "12.396.372",
       color: "#A440E2"
     },
@@ -84,15 +84,16 @@ const cities = [
 
 const Ciudades = () => {
   return (
-    <div className={ciudadStyle.ciudad}>
-        {cities.map((ciudad, id)=>(
-            <div key={id}>
-                <h3>{ciudad.city}, {ciudad.country}</h3>
-                <img className={ciudad.ciudadimg} src={ciudad.image} alt="Imagen de la ciudad" />
-                <h4>Cantidad de Poblacion: {ciudad.population}</h4>
-            </div>
-
-        ))}
+    <div>
+      {cities.map((ciudad, id) => (
+        ciudad.country === "AR" && (
+          <div key={id} className={ciudadStyle.ciudad} style={{backgroundColor: ciudad.color}}>
+            <h3>{ciudad.city}, {ciudad.country}</h3>
+            <img className={ciudadStyle.ciudadimg} src={ciudad.image} alt="Imagen de la ciudad" />
+            <h4>Cantidad de Poblacion: {ciudad.population}</h4>
+          </div>
+        )
+      ))}
     </div>
   )
 }
