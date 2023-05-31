@@ -5,10 +5,15 @@ import Form from './Components/Form'
 
 function App() {
   const [count, setCount] = useState(0)
+
   const[cumple,setCumple] = useState({
     nombre:'',
-    fecha:null,
+    fecha: null,
     invitado:''
+  })
+  const[styles,setStyles] = useState({
+    background: 'transparent',
+    color : 'white'
   })
 
   return (
@@ -18,10 +23,8 @@ function App() {
           count is {count}
         </button>
       </div>
-
-
-      <Form setCumple ={setCumple}/>
-      <Card cumple ={cumple}/>
+      <Form setCumple ={setCumple} setStyles={setStyles}/>
+      <Card cumple ={cumple} styles={styles}/>
     </>
   )
 }
