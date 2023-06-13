@@ -4,10 +4,10 @@ import App from './App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowseRouter>
+  
     <React.StrictMode>
-      <App />
+      <BrowseRouter>
+        <App />
+      </BrowseRouter>
     </React.StrictMode>
-  </BrowseRouter>
-
-)
+);
