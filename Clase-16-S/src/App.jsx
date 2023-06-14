@@ -1,20 +1,23 @@
 import { Route, Routes} from 'react-router-dom'
-import Navbar from "./components/Navbar"
-import { routes } from './utils/reoutes'
+import { routes } from './utils/routes'
 import Home from './Home'
 import Beer from './Beer'
+import Contacto from './Contacto'
+import NavBar from './components/Navbar'
 
 function App() {
   return (
-   <div>
-    <NavBar>
-    <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/' element={<Beer/>} />
-    </Routes>
-    </NavBar>
+    <>
+    <div>
       <h1>Mas que solo bebidas, festejemos el encuentro.</h1> 
-   </div>
+    </div>
+    <NavBar/>
+    <Routes>
+      <Route path={routes.home} element={<Home/>} />
+      <Route path={routes.contacts} element={<Contacto/>} />
+      <Route path={routes.beer} element={<Beer/>} />
+    </Routes>
+    </>
   )
 }
 
