@@ -1,6 +1,6 @@
 export const routes = {
     home: '/',
-    contacts: 'contacts',
-    beer: 'beer/:id',
+    contacts: '/contacto',
+    beer: '/beer/:id',
     pageNotFound: '*'
 }

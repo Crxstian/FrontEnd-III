@@ -8,21 +8,23 @@ import About from './Pages/About'
 import PageNotFound from './Pages/PageNotFound'
 import { routes } from './utils/routes'
 import Character from './Pages/Character'
+import Layout from './Layout/Layout'
 
 function App() {
 
 
   return (
     <>
-      <Navbar/>
       <Routes>
-        <Route path={routes.home} element={<Home/>}/>
-        <Route path={routes.contact} element={<Contact/>}/>
-        <Route path={routes.about} element={<About/>}/>
-        <Route path={routes.characters} element={<RickAndMorty/>}/>
-        <Route path={routes.singleCharacter} element={<Character/>}/>
-        {/* <Route path='/personaje/:id' element={<Character/>}/>  Lo mismo que linea 23*/}
-        <Route path={routes.pageNotFound} element={<PageNotFound/>}/>
+        <Route path='/' element={<Layout/>}>
+          <Route path={routes.home} element={<Home/>}/>
+          <Route path={routes.contact} element={<Contact/>}/>
+          <Route path={routes.about} element={<About/>}/>
+          <Route path={routes.characters} element={<RickAndMorty/>}/>
+          <Route path={routes.singleCharacter} element={<Character/>}/>
+          <Route path={routes.pageNotFound} element={<PageNotFound/>}/>
+        </Route>
+        
       </Routes>
     </>
   )

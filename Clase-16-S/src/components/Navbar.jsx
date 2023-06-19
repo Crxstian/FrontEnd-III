@@ -9,9 +9,9 @@ const Navbar = () => {
   return (
     <nav>
         {/* Aqui deberan agregar los Links */}
-        <h4 onClick={() => navigate(-1)}>↩Back</h4>
+        <h4 onClick={() => navigate(-1)}>↩ Back</h4>
         <Link to={routes.home}><h4>Home</h4></Link>
-        <Link to={routes.contacts}><h4>Contactos</h4></Link>
+        <Link to={routes.contacts}><h4>Contacto</h4></Link>
     </nav>
   )
 }
